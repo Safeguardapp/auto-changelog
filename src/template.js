@@ -2,6 +2,7 @@ const { join } = require('path')
 const Handlebars = require('handlebars')
 const fetch = require('node-fetch')
 const { readFile, fileExists } = require('./utils')
+const IssueTypes = require('./issue-types')
 
 const TEMPLATES_DIR = join(__dirname, '..', 'templates')
 const MATCH_URL = /^https?:\/\/.+/
@@ -49,6 +50,37 @@ Handlebars.registerHelper('commit-list', function (context, options) {
 Handlebars.registerHelper('matches', function (val, pattern, options) {
   const r = new RegExp(pattern, options.hash.flags || '')
   return r.test(val) ? options.fn(this) : options.inverse(this)
+})
+
+Handlebars.registerHelper('mergesByType', function(context, options) {
+    if (!context || context.length === 0) {
+        return ''
+    }
+
+    const list = issueTypes
+        .sort((a, b) => {
+            return a.order > b.order
+        })
+        .map((issueType) => {
+            return {
+                issueType,
+                merges: context.filter(merge => {
+                    const pattern = new RegExp(issueType.filter, 'i')
+                    return pattern.test(merge.message)
+                })
+            };
+        })
+        .filter((item) => {
+            return item.merges.length > 0;
+        })
+        .map(item => options.fn(item))
+        .join('');
+
+    if (!list) {
+        return ''
+    }
+
+    return `${list}`
 })
 
 async function getTemplate (template) {
