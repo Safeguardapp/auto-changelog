@@ -16,6 +16,8 @@ const DEFAULT_OPTIONS = {
   tagPrefix: '',
   sortCommits: 'relevance',
   appendGitLog: '',
+  unreleased: true,
+  commitLimit: false,
   config: '.auto-changelog'
 }
 
