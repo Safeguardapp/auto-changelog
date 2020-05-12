@@ -57,7 +57,7 @@ Handlebars.registerHelper('mergesByType', function(context, options) {
         return ''
     }
 
-    const list = issueTypes
+    const list = IssueTypes
         .sort((a, b) => {
             return a.order > b.order
         })
