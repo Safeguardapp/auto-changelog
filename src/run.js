@@ -9,7 +9,7 @@ const { parseLimit, readJson, writeFile, fileExists, updateLog, formatBytes } = 
 
 const DEFAULT_OPTIONS = {
   output: 'CHANGELOG.md',
-  template: 'compact',
+  template: 'by-issue-type',
   remote: 'origin',
   commitLimit: 3,
   backfillLimit: 3,
