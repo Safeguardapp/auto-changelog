@@ -2,57 +2,57 @@ module.exports = [
     {
         title: 'dependency',
         userFriendly: '📖 Dependencies',
-        filter: '(^\\[snyk\\]|^dependency)',
+        filter: '(^\\[snyk\\]|^\\[dependency\\])',
         order: 10
     }, {
         title: 'maintenance',
         userFriendly: '🧰 Maintenance',
-        filter: '(^maintenance)',
+        filter: '(^\\[maintenance\\])',
         order: 9
     }, {
         title: 'feature',
         userFriendly: '🚀 Features',
-        filter: '(^feature)',
+        filter: '(^\\[feature\\])',
         order: 1
     }, {
         title: 'fix',
         userFriendly: '🐛 Bug Fixes',
-        filter: '(^fix)',
+        filter: '(^\\[fix\\])',
         order: 2
     }, {
         title: 'hotfix',
         userFriendly: '🚑 Hotfixes',
-        filter: '(^hotfix)',
+        filter: '(^\\[hotfix\\])',
         order: 0
     }, {
         title: 'docs',
         userFriendly: '💡 Docs',
-        filter: '(^docs)',
+        filter: '(^\\[docs\\])',
         order: 8
     }, {
         title: 'style',
         userFriendly: '💄 Styling',
-        filter: '(^style)',
+        filter: '(^\\[style\\])',
         order: 7
     }, {
         title: 'refactor',
         userFriendly: '🎨 Refactoring',
-        filter: '(^refactor)',
+        filter: '(^\\[refactor\\])',
         order: 4
     }, {
         title: 'performance',
         userFriendly: '⚡️ Performance improvements',
-        filter: '(^performance)',
+        filter: '(^\\[performance\\])',
         order: 3
     }, {
         title: 'test',
         userFriendly: '✅ Tests',
-        filter: '(^test)',
+        filter: '(^\\[test\\])',
         order: 5
     }, {
         title: 'chore',
         userFriendly: '👷‍ Chores',
-        filter: '(^chore)',
+        filter: '(^\\[chore\\])',
         order: 6
     }
 ];
